@@ -170,4 +170,8 @@ Given the following table named `carsForSale`
 - Write an SQL query to get all `Renault` cars which are more expensive than
   8000
 
+SELECT modelname FROM carsforsale WHERE manufacturerName='Renault' AND acquisitionPrice > 8000;
+
 - Write an SQL query to decrease all `Volkswagen` car's price by 100 units
+
+UPDATE carsforsale SET acquisitionPrice=acquisitionPrice-100 WHERE manufacturerName='Volkswagen';
