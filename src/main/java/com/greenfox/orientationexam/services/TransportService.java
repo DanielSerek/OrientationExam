@@ -10,4 +10,10 @@ public interface TransportService {
     List<Planet> getPlanets();
 
     List<Spaceship> getSpaceship();
+
+    boolean moveSpaceShip(Long id);
+
+    void movePoepleToPlanet(Long id);
+
+    void movePoepleToShip(Long id);
 }

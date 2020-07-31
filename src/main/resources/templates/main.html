@@ -23,13 +23,13 @@
             <td th:text="${planet.population}"/>
             <div th:if="${planet.id} == ${spaceship.planet_id}">
                 <td>
-                    <a href=""><- to planet</a>
-                    <a href="">to ship -></a>
+                    <a th:href="@{|/toplanet/${planet.id}|}"><- to planet</a>
+                    <a th:href="@{|/toship/${planet.id}|}">to ship -></a>
                 </td>
             </div>
             <div th:unless="${planet.id} == ${spaceship.planet_id}">
                 <td>
-                    <a href=""><button type="button">Move here</button></a>
+                    <a th:href="@{|/movehere/${planet.id}|}"><button type="button">Move here</button></a>
                 </td>
             </div>
 
@@ -40,9 +40,12 @@
             <div th:unless="${planet.id} == ${spaceship.planet_id}">
                 <td></td>
             </div>
-
         </tr>
     </table>
+
+    <div th:if="${error}">
+        <p style="color: red">This is a wrong space ship position!</p>
+    </div>
 
     <script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
     <script src="/webjars/bootstrap/4.3.1/js/bootstrap.bundle.js"></script>
