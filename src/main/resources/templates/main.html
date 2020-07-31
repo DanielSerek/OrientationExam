@@ -23,8 +23,8 @@
             <td th:text="${planet.population}"/>
             <div th:if="${planet.id} == ${spaceship.planet_id}">
                 <td>
-                    <a th:href="@{|/toplanet/${planet.id}|}"><- to planet</a>
-                    <a th:href="@{|/toship/${planet.id}|}">to ship -></a>
+                    <a th:href="@{|/toplanet/${planet.id}|}">&#8592; to planet</a>
+                    <a th:href="@{|/toship/${planet.id}|}">to ship &#8594;</a>
                 </td>
             </div>
             <div th:unless="${planet.id} == ${spaceship.planet_id}">
